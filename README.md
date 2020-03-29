@@ -1,4 +1,3 @@
-# mfenig1013-gmail.com
 symphony problem class
 
 symphProblem.py contains a 'problem' class meant to be used with the COIN-OR/Symphony Mixed-Integer Linear Program solver [1, 2].
