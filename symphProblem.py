@@ -85,7 +85,7 @@ class problem(ABC):
         if nullProblem:
             raise Exception('problem is empty!')
         elif missingVariables:
-            raise Exception('variableMap is empty!')
+            raise Exception('variableMap is empty! call updateVM in create function')
         else: # if both are verified, then attempt to run solver
             hfile = outputDirectory + 'human_' + self.problemName + '.lp'
             cfile = outputDirectory + 'converted_' + self.problemName + '.lp'

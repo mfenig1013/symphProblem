@@ -11,6 +11,7 @@ import symphProblem
 def genData():
     ingredients = []
     # protein, calories, and price are in units of grams, kcal, and $ respectively
+    # note wildRice and wildRice2 are different ingredients but have substring/naming overlap
     ingredients.append({'ingredient': 'wildRice' , 'protein': 4., 'calories': 101., 'price': 5})
     ingredients.append({'ingredient': 'wildRice2' , 'protein': 3., 'calories': 150., 'price': 4})
     ingredients.append({'ingredient': 'buckwheatGroats', 'protein': 19, 'calories': 568, 'price': 10})
