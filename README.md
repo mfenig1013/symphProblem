@@ -13,6 +13,10 @@ symphProblem_tests.py - Tests
 
 problem class functions
 
+problem.__init__(self, problemName, defaultChar='x')
+problemName: a string describing the model name; this will be used in output file naming conventions
+defaultChar: default single-character to be used for converted file names
+
 problem.create(self) - Model creation function to be overwritten in child classes by the user.  This function should always call problem.updateVM within it to update the internal variable count and mapper.
 
 problem.convertH2C(self) - Creates a converted string of the problem by mapping all user-defined variables to "x*" where '*' is a natural number.  This should (in general) not be called by the user.
@@ -22,3 +26,12 @@ problem.updateVM(self, variables) - variables is a list of strings corresponding
 problem.solve(self, outputDirectory, pathToSymphony, pathToParametersFile=None) - Runs the symphony binary on the model.  outputDirectory: the directory where model files will be generated and stored.  
 pathToSymphony: path to the symphony binary
 pathToParametersFile: optional input parameter file location (see [1] for details on valid parameters for the solver)
+
+useful problem class fields
+
+self.problem: string corresponding to the entire human-readable model specified by the user
+self.solution: dictionary of user-defined variables and their values in the solution (if a solution exists)
+self.solved: if True means a valid problem has been created and has been solved; False otherwise
+self.var: set of human-defined variables
+self.numVar: number of variables in the model
+self.variableMap = a mapping of user-defined variables and their converted names and vice versa.  'h2c' means user-defined to converted; 'c2h' means converted back to user-defined
