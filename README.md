@@ -1,6 +1,4 @@
-symphony problem class
-
-symphProblem.py contains a 'problem' class meant to be used with the COIN-OR/Symphony Mixed-Integer Linear Program solver [1,2] binaries [3]. It is used to write a text-based MILP model in the CPLEX LP format [4].  The class manages human-readable variable names that may be long and/or have substring issues automatically and also manages calling the Symphony binaries to obtain problem solutions.
+symphProblem.py contains a 'problem' class meant to be used with the COIN-OR/Symphony Mixed-Integer Linear Program solver [1,2] binaries [3]. The class is inherited to create a user-defined text-based MILP model in the CPLEX LP format [4].  The class manages human-readable variable names that may be long and/or have substring issues.  It also manages calling of the Symphony binaries to obtain problem solutions and store them within the class for user by other objects/processes.
 
 symphProblem_example.py - An example pattern for creating a simple mixture problem and reporting on the solution
 symphProblem_tests.py - Tests
@@ -12,7 +10,6 @@ symphProblem_tests.py - Tests
 [3] https://dl.bintray.com/coin-or/download/
 
 [4] http://lpsolve.sourceforge.net/5.0/CPLEX-format.htm
-
 
 problem class functions
 
