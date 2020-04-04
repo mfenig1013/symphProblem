@@ -38,8 +38,13 @@ pathToParametersFile: optional input parameter file location (see [1] for detail
 ### useful problem class fields
 
 self.problem: string corresponding to the entire human-readable model specified by the user
+
 self.solution: dictionary of user-defined variables and their values in the solution (if a solution exists)
+
 self.solved: if True means a valid problem has been created and has been solved; False otherwise
+
 self.var: set of human-defined variables
+
 self.numVar: number of variables in the model
-self.variableMap = a mapping of user-defined variables and their converted names and vice versa.  'h2c' means user-defined to converted; 'c2h' means converted back to user-defined
+
+self.variableMap: a mapping of user-defined variables and their converted names and vice versa.  'h2c' means user-defined to converted; 'c2h' means converted back to user-defined
