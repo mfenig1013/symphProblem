@@ -12,3 +12,9 @@ symphProblem_tests.py - Tests
 [3] https://dl.bintray.com/coin-or/download/
 
 [4] http://lpsolve.sourceforge.net/5.0/CPLEX-format.htm
+
+problem class functions
+
+problem.create(self) - To be overwritten in child classes for specifying text of model.  Note: This function should always call problem.updateVM(variables) to update the internal variable count and mapper.
+
+problem.convertH2C(self) - Creates a converted string of the problem by mapping all user-defined variables to "x*" where '*' is a natural number.  This should (in general) not be called by the user.
