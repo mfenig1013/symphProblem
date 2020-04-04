@@ -13,8 +13,15 @@ symphProblem_tests.py - Tests
 
 [4] http://lpsolve.sourceforge.net/5.0/CPLEX-format.htm
 
+
 problem class functions
 
-problem.create(self) - To be overwritten in child classes for specifying text of model.  Note: This function should always call problem.updateVM(variables) to update the internal variable count and mapper.
+problem.create(self) - Model creation function to be overwritten in child classes by the user.  This function should always call problem.updateVM within it to update the internal variable count and mapper.
 
 problem.convertH2C(self) - Creates a converted string of the problem by mapping all user-defined variables to "x*" where '*' is a natural number.  This should (in general) not be called by the user.
+
+problem.updateVM(self, variables) - variables is a list of strings corresponding to model variables. This function maps each variable to an internal representation 'x*', where '*' is a number to be used by the symphony solver to eliminate issues arising from user-defined variables.
+
+problem.solve(self, outputDirectory, pathToSymphony, pathToParametersFile=None) - Runs the symphony binary on the model.  outputDirectory: the directory where model files will be generated and stored.  
+pathToSymphony: path to the symphony binary
+pathToParametersFile: optional input parameter file location (see [1] for details on valid parameters for the solver)
